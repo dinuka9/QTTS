@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="lk.dinuka.qtts.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textToRead"
+            android:layout_centerHorizontal="true"
+            android:gravity="top"
+            android:hint="text to speech"/>
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:id="@+id/readBtn"
+            android:layout_alignParentRight="true"
+            android:onClick="readText"
+            android:layout_below="@+id/stopBtn" />
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:id="@+id/stopBtn"
+            android:onClick="stopReading"
+            android:layout_below="@+id/textToRead"
+            android:layout_toLeftOf="@+id/readBtn"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/languageSpinner"
+            android:layout_alignTop="@+id/readBtn"
+            android:layout_alignBottom="@+id/readBtn"
+            android:layout_toLeftOf="@+id/readBtn"
+            android:layout_toStartOf="@+id/readBtn" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/speedSeekBar"
+            android:layout_below="@+id/readBtn"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="speed"
+            android:id="@+id/textView"
+            android:layout_below="@+id/readBtn"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="pitch"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="20dp" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pitchSeekBar"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_alignLeft="@+id/speedSeekBar"
+            android:layout_alignRight="@+id/speedSeekBar" />
+    </RelativeLayout>
+</ScrollView>
